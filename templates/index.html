@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transports Internes Hospitaliers</title>
+</head>
+<body>
+    <h1>Liste des Transports</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Patient</th>
+            <th>De</th>
+            <th>À</th>
+            <th>Heure</th>
+        </tr>
+        {% for transport in transports %}
+        <tr>
+            <td>{{ transport.id }}</td>
+            <td>{{ transport.patient }}</td>
+            <td>{{ transport.from }}</td>
+            <td>{{ transport.to }}</td>
+            <td>{{ transport.time }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('add_transport') }}">Ajouter un nouveau transport</a>
+</body>
+</html>
